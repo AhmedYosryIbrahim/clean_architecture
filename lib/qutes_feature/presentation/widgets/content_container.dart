@@ -1,9 +1,12 @@
+import 'package:clean_architecture/qutes_feature/domain/entities/quotes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/app_colors.dart';
 
 class ContentContainer extends StatelessWidget {
-  const ContentContainer({Key? key}) : super(key: key);
+  final Quotes quotes;
+
+  const ContentContainer({Key? key, required this.quotes}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class ContentContainer extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+            quotes.quote,
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
@@ -25,7 +28,7 @@ class ContentContainer extends StatelessWidget {
             height: 20,
           ),
           Text(
-            'ahmed yosry',
+            quotes.author,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ],
